@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+<body>
+  <div x-data="{ open: false, label: '' }" x-init="$watch('open', (value, oldValue) => label = oldValue + ' to ' + value)">
+    <button @click="open = !open">Toggle</button>
+    <span x-text="label"></span>
+  </div>
+</body>
+</html>

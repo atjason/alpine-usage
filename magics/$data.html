@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+<body>
+  <div x-data="{ name: 'Tom' }">
+    <div x-data="{ age: 18 }">
+      <button @click="sayHi($data)">Say Hi</button>
+    </div>
+  </div>
+
+  <script>
+    function sayHi(params) {
+      const { name, age } = params
+      const str = `Name: ${name}, Age: ${age}`
+      alert(str)
+    }
+  </script>
+</body>
+</html>

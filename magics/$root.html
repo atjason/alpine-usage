@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+<body>
+  <div x-data data-message="Hello World">
+    <div>
+      <button @click="alert($root.dataset.message)">Say Hi</button>
+    </div>
+  </div>
+</body>
+</html>

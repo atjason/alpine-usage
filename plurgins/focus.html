@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+<body>
+  <div x-data="{ open: false }">
+    <button @click="open = true">Open Dialog</button>
+ 
+    <span x-show="open" x-trap.noscroll="open">
+      <p>...</p> 
+      <input type="text" placeholder="Some input..."> 
+      <input type="text" placeholder="Some other input...">
+        
+      <button @click="open = false">Close Dialog</button>
+    </span>
+</div>
+</body>
+</html>

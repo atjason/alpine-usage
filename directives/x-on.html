@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+<body>
+  <div x-data="{ name: 'Tom' }">
+    <button @click="sayHi(name, $event)" source="the_button">Say Hi</button>
+    <input @input.debounce.500ms="fetchResults" @keydown.enter="alert('Submitted.')" placeholder="Press Enter to submit.">
+    <div @keydown.escape.window="alert('Escape from anywhere.')">Support Escape from Anywhere.</div>
+  </div>
+
+  <script>
+    function sayHi(name, e) {
+      let source = e.target.getAttribute('source')
+      let str = source + ': Hi ' + name
+      alert(str)
+    }
+
+    function fetchResults() {
+      console.log('Search…')
+    }
+  </script>
+</body>
+</html>

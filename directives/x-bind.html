@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style type="text/css">
+      .hidden {
+        display: none;
+      }
+      .empty {}
+    </style>
+  </head>
+<body>
+  <div x-data="{ placeholder: 'Type something…' }">
+    <input x-bind:placeholder="placeholder">
+    <input :placeholder="placeholder">
+  </div>
+  
+  <div x-data="{ open: false }">
+    <button @click="open = !open">Toggle</button>
+
+    <div :class="open ? '' : 'hidden'">Content…</div>
+    <div :class="open || 'hidden'">Content…</div>
+    <div :class="{ hidden: !open }" class="empty">Content…</div>
+    <div :style="{ display: open ? 'inherit' : 'none'}">Content…</div>
+  </div>
+</body>
+</html>

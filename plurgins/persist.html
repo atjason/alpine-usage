@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script defer src="https://unpkg.com/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+<body>
+  <div x-data="{ count: $persist(0) }">
+    <button @click="count++">Increase</button>
+    <span x-text="count"></span>
+  </div>
+
+  <div x-data="dataset">
+    <button @click="count++">Increase</button>
+    <span x-text="count"></span>
+  </div>
+
+  <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('dataset', function() {
+        return {
+          count: this.$persist(0).as('count-2'),
+        }
+      })
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+<body>
+  <div x-data="{ message: '', selected: false, answer: '', color: '' }">
+    <div>
+      <input x-model="message" placeholder="Type message">
+      <input x-model.lazy="message" placeholder="Lazy update">
+      <input x-model.debounce="message" placeholder="Debounce update">
+      <input x-model.number="message" placeholder="Number if possible">
+      <button @click="message = 'Changed'">Change Message</button>
+      <span x-text="message"></span>
+    </div>
+
+    <div>
+      <input type="checkbox" id="checkbox" x-model="selected">
+      <label for="checkbox" x-text="selected ? 'Selected' : 'Not Selected'"></label>
+    </div>
+
+    <div>
+      <input type="radio" value="yes" x-model="answer">
+      <label>Yes</label>
+      <input type="radio" value="no" x-model="answer">
+      <label>No</label>
+      Answer: <span x-text="answer"></span>
+    </div>
+
+    <div>
+      <select x-model="color">
+        <option value="" disabled>Select A Color</option>
+        <option>Red</option>
+        <option>Orange</option>
+        <option>Blue</option>
+      </select>
+      Color: <span x-text="color"></span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+<body>
+  <div x-data x-id="['text-input']">
+    <label :for="$id('text-input')">Label:</label>
+    <input :id="$id('text-input')">
+  </div>
+
+  <div x-data x-id="['text-input']">
+    <span :for="$id('text-input')">Label:</span>
+    <input :id="$id('text-input')"
+  </div>
+</body>
+</html>

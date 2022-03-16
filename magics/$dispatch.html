@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+<body>
+  <div x-data="{ message: '' }">
+    <button @click="$dispatch('notify', { message: 'Hello World' })">Dispatch</button>
+    <span x-text="message" @notify.window="message = $event.detail.message">message</span>
+  </div>
+
+  <div x-data="{ title: 'Hello' }">
+    <input x-model="title">
+    <span x-model="title">
+      <!-- After the button is pressed, `x-model` will catch the bubbling "input" event, and update title. -->
+      <button @click="$dispatch('input', 'Hello World!')">Click me</button>
+    </span>
+  </div>
+</body>
+</html>

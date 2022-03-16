@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+<body>
+  <div x-data="{ label: 'Hello', message: '' }" x-effect="if (label != 'Hello')  message = 'Any data changed.'">
+    <button @click="label += ' World!'">Change</button>
+    <span x-text="message"></span>
+  </div>
+</html>
